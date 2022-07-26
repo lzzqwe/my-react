@@ -1,6 +1,16 @@
 .App {
   text-align: center;
 }
+ul {
+  /* display: flex; */
+  list-style: none;
+ margin-left: 50%;
+  transform: translateX(-50%);
+}
+li {
+  margin-right: 20px;
+  display: inline-block;
+}
 
 .App-logo {
   height: 40vmin;
