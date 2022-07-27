@@ -19,6 +19,7 @@ import StatePromote from "./views/StatePromote";
 import CombinationExtend from "./views/CombinationExtend";
 import Context from "./views/Context";
 import ErrorBoundary from "./views/ErrorBoundary";
+import UseState from "./views/UseState";
 function App() {
   return (
     <div className="App">
@@ -84,6 +85,11 @@ function App() {
               错误边界
             </NavLink>
           </li>
+          <li>
+            <NavLink activeClassName="selected" to="/useState">
+              USESTATE
+            </NavLink>
+          </li>
         </ul>
         <Switch>
           <Route path="/jsxIntro">
@@ -125,6 +131,9 @@ function App() {
           </Route>
           <Route path="/errorBoundary">
             <ErrorBoundary></ErrorBoundary>
+          </Route>
+          <Route path="/useState">
+            <UseState></UseState>
           </Route>
           <Route path="/">
             <Home></Home>
