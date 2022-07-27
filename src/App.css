@@ -1,11 +1,17 @@
 .App {
   text-align: center;
 }
+.selected {
+  color: #61dafb;
+  font-weight: 600;
+  font-size: 30px;
+}
 ul {
   /* display: flex; */
   list-style: none;
  margin-left: 50%;
   transform: translateX(-50%);
+  margin-bottom: 50px;
 }
 li {
   margin-right: 20px;
@@ -40,4 +46,7 @@ li {
   to {
     transform: rotate(360deg);
   }
+}
+a {
+  text-decoration: none;
 }
