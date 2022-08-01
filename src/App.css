@@ -1,5 +1,9 @@
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
+}
+.ml {
+  margin-left: 10px;
 }
 .selected {
   color: #61dafb;
