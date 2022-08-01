@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useDebouncedCallback } from "use-debounce";
 import { recommendSongslist } from "../../api/api";
+
 function Home() {
   const [songlist, setSongslist] = useState([]);
   const getList = () => {
@@ -10,10 +12,12 @@ function Home() {
       setSongslist(res.result);
     });
   };
-  useEffect(() => {
+  const fetchList = useDebouncedCallback(() => {
     getList();
-    console.log("111");
-  }, []);
+  }, 500);
+  useEffect(() => {
+    fetchList()
+  },[]);
   return (
     <div className="App">
       <ul>
