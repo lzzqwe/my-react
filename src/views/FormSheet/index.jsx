@@ -7,14 +7,14 @@ class FormSheet extends Component {
     this.state = {
       value: "",
     };
-    this.myRef = React.createRef()
+    this.myRef = React.createRef();
   }
   handleSubmit = (event) => {
     console.log(this.state.value);
     event.preventDefault();
   };
   show = () => {
-    const node = this.myRef.current
+    const node = this.myRef.current;
     const { history, location, match } = this.props;
     console.log(location);
     console.log(match);
@@ -33,12 +33,12 @@ class FormSheet extends Component {
   render() {
     const { location } = this.props;
     return (
-      <>
+      <div className="App">
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="">
             名字
             <input
-            ref={this.myRef}
+              ref={this.myRef}
               onChange={this.handleChange}
               value={this.state.value}
               type="text"
@@ -54,7 +54,7 @@ class FormSheet extends Component {
         <Button type="primary" onClick={this.back}>
           返回
         </Button>
-      </>
+      </div>
     );
   }
 }
