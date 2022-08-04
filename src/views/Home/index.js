@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { recommendSongslist } from "../../api/api";
-import { Button, Spin } from "antd";
+import { Button, Spin,Pagination } from "antd";
 function List(props) {
   console.log(props);
   const { songlist, setOffset, setSongslist } = props;
@@ -9,7 +9,7 @@ function List(props) {
     <>
       <ul>
         {songlist.map((item) => {
-          return <li key={item.id}>{item.name}</li>;
+          return <li className="item" key={item.id}>{item.name}</li>;
         })}
       </ul>
       <Button onClick={setOffset} type="primary">
@@ -32,11 +32,12 @@ function Home() {
     };
     setIsLoading(false);
     recommendSongslist(payload).then((res) => {
+      // console.log(res);
       if (res.code == 200) {
         setIsLoading(true);
         setSongslist(res.result);
       }
-      console.log(res);
+      // console.log(res);
     });
   };
   const fetchList = useDebouncedCallback(() => {

@@ -25,7 +25,7 @@ class LifeCycle extends Component {
     return (
       <div className="App">
         <h1>Hello World</h1>
-        <h2>it is {this.state.date.toLocaleTimeString()}</h2>
+        <h2>it is <span className="time-size">{this.state.date.toLocaleString()}</span></h2>
       </div>
     );
   }

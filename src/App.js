@@ -28,67 +28,67 @@ function App() {
       <Layout>
         <Sider>
           <ul>
-            <li>
+            <li className='item'>
               <NavLink exact activeClassName="selected" to="/">
                 首页
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/jsxIntro">
                 jsx简介
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/elementRender">
                 元素渲染
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/moduleProps">
                 组件&props
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/lifeCycle">
                 state&&以及生命周期
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/eventHanding">
                 事件处理
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/conditionsRender">
                 条件渲染
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/formSheet">
                 表单
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/statePromote">
                 状态提升
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/combinationExtend">
                 组合以及继承
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/context">
                 爷孙组件以及更深层的组件传值
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/errorBoundary">
                 错误边界
               </NavLink>
             </li>
-            <li>
+            <li className='item'>
               <NavLink activeClassName="selected" to="/useState">
                 USESTATE
               </NavLink>
