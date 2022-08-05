@@ -13,7 +13,7 @@ root.render(
 //   root.render(
 //     <React.StrictMode>
 //       <ElementRender />
-//     </React.StrictMode>
+//     </React.StrictMode> 
 //   );
 // }
 // setInterval(tick,1000)
