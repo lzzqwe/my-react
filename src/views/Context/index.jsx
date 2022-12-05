@@ -26,7 +26,7 @@ class ThemeButton extends Component {
 
 const Context = (props) => {
   return (
-    <div className="App">
+    <div className="App 红色">
       <ThemeButton></ThemeButton>
     </div>
   );

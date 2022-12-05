@@ -21,7 +21,7 @@ export const requestGET = (url, payload, header) => {
         params: payload,
       })
       .then((res) => {
-        return resolve(res.data);
+        return resolve(res);
       });
   });
 };

@@ -1,33 +1,29 @@
-const formatName = (user) => (
-    user.firstName + " " + user.lastName
-  )
-  const user = {
-    firstName:'Harper',
-    lastName:"Perez"
-  }
-  // const element = <p>{formatName(user)}</p>
-  const getGreeting = (user) => {
-    if(user) {
-      return (
-         <h1>Hello,{formatName(user)}</h1>
-      )
-    } else {
-      return (
-        <h1>Hello,Stranger</h1> 
-      )
-    }
-  }
-  function JsxIntro() {
-    const name = 'Josh Perez'
-    return (
-      <div className="App">
-        <header className="App-header">
-          {name}
-        </header>
-        {getGreeting(user)}
-      </div>
-    );
-  }
-  
+import {useState,memo,useRef,useEffect, useCallback} from 'react'
+const JsxIntro = () => {
+  const [count, setCount] = useState(0);
+  const [sonCount, setSonCount] = useState(0);
+  const allPlus = useCallback(() => {
+    setCount(count + 1);
+    setSonCount(sonCount + 1);
+  },[])
+  return (
+    <div>
+      {console.log("Parent render")}
+      <button onClick={() => setCount(v => v + 1)}>Parent + 1</button>
+      <h3>Parent: {count}</h3>
+      <Son allPlus={allPlus} sonCount={sonCount} />
+    </div>
+  );
+};
+const Son = memo((props) => {
+  return (
+    <div>
+      {console.log("Son render")}
+      <p>Son: {props.sonCount}</p>
+      <button onClick={props.allPlus}>All + 1</button>
+    </div>
+  );
+});
+
   export default JsxIntro;
   

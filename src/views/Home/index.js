@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRequest } from 'ahooks';
 import { useDebouncedCallback } from "use-debounce";
 import { recommendSongslist } from "../../api/api";
 import { Button, Spin,Pagination } from "antd";
@@ -25,6 +26,7 @@ function Home() {
   const [songlist, setSongslist] = useState([]);
   const [offset, setOffset] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+
   const getList = () => {
     const payload = {
       limit: 10,
@@ -32,6 +34,7 @@ function Home() {
     };
     setIsLoading(false);
     recommendSongslist(payload).then((res) => {
+      res=res.data
       // console.log(res);
       if (res.code == 200) {
         setIsLoading(true);
@@ -40,6 +43,10 @@ function Home() {
       // console.log(res);
     });
   };
+  const { data, error, loading } = useRequest(getList,{
+    manual: true
+  });
+  console.log(data);
   const fetchList = useDebouncedCallback(() => {
     getList();
   }, 20);
